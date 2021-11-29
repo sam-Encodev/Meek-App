@@ -10,6 +10,8 @@ import {
 	List,
 	ListItem,
 	Button,
+	SwipeoutButton,
+	SwipeoutActions,
 } from "framework7-react";
 import { cartlist } from "../js/cart_list";
 
@@ -20,14 +22,29 @@ const CartPage = ({ f7router }) => {
 			<List mediaList>
 				{cartlist.map((item, index) => (
 					<ListItem
+						swipeout
 						key={index}
 						link={`/product/`}
 						title={item.title}
 						after={item.after}
 						subtitle={item.subtitle}
 						text={item.text}
+						noChevron={true}
 					>
 						<img slot="media" src={item.image} width="80" />
+
+						<SwipeoutActions left>
+							<SwipeoutButton color="orange">Mark</SwipeoutButton>
+						</SwipeoutActions>
+						<SwipeoutActions right>
+							<SwipeoutButton
+								delete
+								overswipe
+								confirmText="Are you sure you want to delete this item?"
+							>
+								Delete
+							</SwipeoutButton>
+						</SwipeoutActions>
 					</ListItem>
 				))}
 			</List>

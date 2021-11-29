@@ -10,6 +10,9 @@ import {
 	CardContent,
 	Link,
 	Button,
+	SwipeoutActions,
+	SwipeoutButton,
+	BlockTitle,
 } from "framework7-react";
 import "../css/grid.css";
 import "../css/list-view.css";
@@ -31,6 +34,7 @@ const HomePage = () => {
 							link={`/product/`}
 							title={item.title}
 							subtitle="Michael Jackson"
+							noChevron={true}
 						>
 							<img
 								slot="media"
@@ -41,6 +45,7 @@ const HomePage = () => {
 					))}
 				</List>
 			</Block>
+
 
 			<Block>
 				<Button fill onClick={() => setstate(true)}>
