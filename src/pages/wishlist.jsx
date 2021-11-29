@@ -1,15 +1,46 @@
-import React from 'react';
-import { Page, Navbar, Block, BlockTitle } from 'framework7-react';
+import React from "react";
+import {
+	Page,
+	Navbar,
+	Block,
+	BlockTitle,
+	ListItem,
+	List,
+	SwipeoutActions,
+	SwipeoutButton,
+} from "framework7-react";
+import { cartlist } from "../js/cart_list";
 
 const WishListPage = () => (
-  <Page>
-    <Navbar title="WishList"/>
-    <BlockTitle>WishList My App</BlockTitle>
-    <Block strong>
-      <p>Fugiat perspiciatis excepturi, soluta quod non ullam deleniti. Nobis sint nemo consequuntur, fugiat. Eius perferendis animi autem incidunt vel quod tenetur nostrum, voluptate omnis quasi quidem illum consequuntur, a, quisquam.</p>
-      <p>Laudantium neque magnam vitae nemo quam commodi, in cum dolore obcaecati laborum, excepturi harum, optio qui, consequuntur? Obcaecati dolor sequi nesciunt culpa quia perspiciatis, reiciendis ex debitis, ut tenetur alias.</p>
-    </Block>
-  </Page>
+	<Page>
+		<Navbar title="WishList" />
+
+	
+			<List mediaList>
+				{cartlist.map((item, index) => (
+					<ListItem
+						swipeout
+						key={index}
+						title={item.title}
+						subtitle={item.subtitle}
+						noChevron={true}
+					>
+						<img slot="media" src={item.image} width="80" />
+
+						<SwipeoutActions right>
+							<SwipeoutButton
+								delete
+								overswipe
+								confirmText="Are you sure you want to delete this item?"
+							>
+								Delete
+							</SwipeoutButton>
+						</SwipeoutActions>
+					</ListItem>
+				))}
+			</List>
+
+	</Page>
 );
 
 export default WishListPage;

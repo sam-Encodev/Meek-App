@@ -28,7 +28,6 @@ const CartPage = ({ f7router }) => {
 						title={item.title}
 						after={item.after}
 						subtitle={item.subtitle}
-						text={item.text}
 						noChevron={true}
 					>
 						<img slot="media" src={item.image} width="80" />
