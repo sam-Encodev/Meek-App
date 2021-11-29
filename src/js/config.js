@@ -10,6 +10,9 @@ export const f7params = {
 	theme: "auto", // Automatic theme detection
 
 	id: "io.framework7.myapp", // App bundle ID
+	panel: {
+		swipe: true,
+	  },
 	// App store
 	store: store,
 	// App routes
