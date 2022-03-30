@@ -39,6 +39,7 @@ const MannieFresh = () => {
 
 				<View
 					id="view-house"
+					name="home" 
 					main
 					tab
 					tabActive
@@ -48,7 +49,7 @@ const MannieFresh = () => {
 					iosDynamicNavbar={true}
 					browserHistory={true}
 				/>
-				<View id="view-cart" name="cart" tab url="/cart/" router={true} />
+				<View id="view-cart" name="cart" tab url="/cart/" />
 				<View id="view-heart" name="heart" tab url="/heart/" />
 				<View id="view-person" name="person" tab url="/person/" />
 			</Views>

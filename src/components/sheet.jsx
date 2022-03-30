@@ -13,6 +13,7 @@ import {
 	ListItem,
 	Row,
 	Col,
+	Stepper,
 } from "framework7-react";
 import { Text } from "./text";
 
@@ -38,6 +39,18 @@ const SheetPrompt = ({ state, close }) => {
 				<Block>
 					<List noHairlines>
 						<ListItem title="Item 1">
+						
+								<Stepper
+									fill
+									value={0}
+									min={0}
+									max={10}
+									step={1}
+									autorepeat={true}
+									
+								/>
+					
+
 							<Text text="$500" fontSize="15px" fontWeight="500" />
 						</ListItem>
 						<ListItem title="Item 2">

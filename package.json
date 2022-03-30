@@ -14,7 +14,9 @@
     "cordova-ios": "cross-env TARGET=cordova cross-env NODE_ENV=production vite build && node ./build/build-cordova.js && cd cordova && cordova run ios",
     "build-cordova-android": "cross-env TARGET=cordova cross-env NODE_ENV=production vite build && node ./build/build-cordova.js && cd cordova && cordova build android",
     "cordova-android": "cross-env TARGET=cordova cross-env NODE_ENV=production vite build && node ./build/build-cordova.js && cd cordova && cordova run android",
-    "postinstall": "cpy ./node_modules/framework7-icons/fonts/*.* ./src/fonts/ && cpy ./node_modules/material-icons/iconfont/*.* ./src/fonts/"
+    "postinstall": "cpy ./node_modules/framework7-icons/fonts/*.* ./src/fonts/ && cpy ./node_modules/material-icons/iconfont/*.* ./src/fonts/",
+    "cordova-android": "cross-env TARGET=cordova cross-env NODE_ENV=development node ./build/build.js && cd cordova && cordova run android",
+    "cordova-ios": "cross-env TARGET=cordova cross-env NODE_ENV=development node ./build/build.js && cd cordova && cordova run ios"
   },
   "browserslist": [
     "Android >= 7",
